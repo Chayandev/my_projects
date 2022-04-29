@@ -1,0 +1,105 @@
+#include <bits/stdc++.h>
+using namespace std;
+struct Details
+{
+    string username, pasword, emialid;
+};
+
+int main()
+{
+    char c;
+    int con1 = 1, count = 0, con2 = 1,tmp=0;
+    string ex;
+    struct Details d1, d2;
+    cout << "-------HEY USER MAKE YOUR OWN ACCOUNT FOR BEST EXPERIENCE-------\n" << endl;
+    cout << "1.Register\n2.Log in(If you alredy have an account)" << endl;
+    cout << "Press '1' for Register or '2' for log in." << endl;\
+    
+    while (con1)
+    {
+        cin >> c;
+        if (c == '1')
+        {
+         
+
+            cout << "\nEnter your Email-id" << endl;
+            cin >> d1.emialid;
+
+            if (ex == d1.emialid && count > 0)
+            {
+                cout << "\nThis email_id alredy exist" << endl;
+                cout << "\nPress '1' for Register or '2' for log in." << endl;
+                continue;
+            }
+            cout << "\nEnter Username(Don't use any extra space)" << endl;
+            cin >> d1.username;
+            cout << "\nSelect password" << endl;
+            cin >> d1.pasword;
+            
+            cout << "\nDone ✔" << endl;
+            count++;
+            cout << "\nPress '1' for Register or '2' for log in" << endl;
+           
+                ex = d1.emialid;
+                continue;
+            
+        }
+            else if (c == '2')
+            {cout << "\nEnter Username(Don't use any extra space)" << endl;
+                cin >> d2.username;
+                cout << "Select password" << endl;
+                cin >> d2.pasword;
+                if (d2.username != d1.username){
+                    cout << "\nOopss!Sorry cant't find any account.Make sure you have an account"<<endl;
+                    cout << "\nPress '1' for Register or '2' for log in." << endl;
+                    continue;}
+               // while (con2){
+                    
+               
+               else if (d2.username == d1.username && d2.pasword != d1.pasword)
+                {
+                    cout << "\nWRONG PASSWORD X" << endl;
+                    cout << "\nPress 'R' to Retry\t or \t'F' to do Forget password" << endl;
+                    cin >> c;
+                    if (c == 'R')
+                    {
+                        continue;
+                    }
+                    else if (c == 'F')
+                    {
+                        cout << "\nEnter new password" << endl;
+                        cin >> d1.pasword;
+                        cout << "\nConfirm Password" << endl;
+                        cin >> d2.pasword;
+                        cout << "\nSuccessful Password Reset ✔" << endl;
+                        cout << "\nPress '1' for Register or '2' for log in." << endl;
+                        continue;
+                    }
+                }
+                else
+                {
+                    cout << "Your username:-" << d2.username << endl;
+                    cout << "LOGGED IN....\nSucessfully ✔" << endl;
+                    cout << "press '#' to check Your profile or * to go back to main menu..." << endl;
+                    cin >> c;
+                    con2=0;
+                    if (c == '#')
+                    {
+                        cout << "Gmail:-" << d1.emialid << endl
+                             << "Username:-" << d2.username << endl
+                             << "pasword:-" << d2.pasword;
+                        con1 = 0;
+                    }
+                    else if (c == '*')
+                    {
+
+                        continue;
+                    }
+                }
+           
+        }
+    }
+
+        return 0;
+    }
+
